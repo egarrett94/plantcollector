@@ -1,0 +1,6 @@
+module Pods_PlantCollector {
+  umbrella header "Pods-PlantCollector-umbrella.h"
+
+  export *
+  module * { export * }
+}
