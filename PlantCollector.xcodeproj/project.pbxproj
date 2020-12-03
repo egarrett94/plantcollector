@@ -14,6 +14,7 @@
 		BCBEE0C32578660B007684D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBEE0C22578660B007684D2 /* Assets.xcassets */; };
 		BCBEE0C62578660B007684D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBEE0C52578660B007684D2 /* Preview Assets.xcassets */; };
 		BCBEE0D0257868A2007684D2 /* PlantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEE0CF257868A2007684D2 /* PlantList.swift */; };
+		BCDB437B2579830500F8185C /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB437A2579830500F8185C /* RemoteImage.swift */; };
 		D6639724979BBA32FDE68203 /* libPods-PlantCollector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5922F16E10B78FCD2F4B3B /* libPods-PlantCollector.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		BCBEE0C52578660B007684D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCBEE0C72578660B007684D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCBEE0CF257868A2007684D2 /* PlantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantList.swift; sourceTree = "<group>"; };
+		BCDB437A2579830500F8185C /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		CBD07A0D19CD362E3258AC9D /* Pods-PlantCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantCollector.release.xcconfig"; path = "Target Support Files/Pods-PlantCollector/Pods-PlantCollector.release.xcconfig"; sourceTree = "<group>"; };
 		F1BE8BDF506268A790239DD3 /* Pods-PlantCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantCollector.debug.xcconfig"; path = "Target Support Files/Pods-PlantCollector/Pods-PlantCollector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				BCBEE0CF257868A2007684D2 /* PlantList.swift */,
 				BC3D78A025786E74002AA632 /* PlantListItem.swift */,
 				BC3D78A325786F19002AA632 /* Plant.swift */,
+				BCDB437A2579830500F8185C /* RemoteImage.swift */,
 			);
 			path = PlantCollector;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				BC3D78A125786E74002AA632 /* PlantListItem.swift in Sources */,
 				BCBEE0C12578660A007684D2 /* ContentView.swift in Sources */,
 				BC3D78A425786F19002AA632 /* Plant.swift in Sources */,
+				BCDB437B2579830500F8185C /* RemoteImage.swift in Sources */,
 				BCBEE0D0257868A2007684D2 /* PlantList.swift in Sources */,
 				BCBEE0BF2578660A007684D2 /* PlantCollectorApp.swift in Sources */,
 			);

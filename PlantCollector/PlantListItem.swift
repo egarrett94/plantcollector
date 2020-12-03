@@ -12,7 +12,9 @@ struct PlantListItem: View {
     
     var body: some View {
         HStack {
-            Image(plant.image).resizable().frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            RemoteImage(url: plant.imageURL)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Text(plant.name)
         }
     }
@@ -20,6 +22,6 @@ struct PlantListItem: View {
 
 struct PlantListItem_Previews: PreviewProvider {
     static var previews: some View {
-        PlantListItem(plant: Plant(id: 1, name: "Monstera", image: "leaf"))
+        PlantListItem(plant: Plant(id: 1, name: "Monstera", imageURL: "leaf"))
     }
 }

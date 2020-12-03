@@ -6,11 +6,54 @@
 //
 
 import SwiftUI
+import Alamofire
+
+struct PlantListResponse: Decodable {
+   let plants: [Plant]
+    
+   enum CodingKeys: String, CodingKey {
+        case plants = "data"
+    }
+}
 
 struct ContentView: View {
+    let API_KEY = ProcessInfo.processInfo.environment["plant_api_key"]
+    
+    @State var plantsArray: [Plant] = []
+    
+    func requestPlants(completion: @escaping ((AFResult<[Plant]>) -> Void)) {
+        AF.request("https://trefle.io/api/v1/plants?token=\(API_KEY ?? "")&limit=10").responseDecodable {
+            (response: AFDataResponse<PlantListResponse>) in
+            switch response.result {
+                case .success(let response):
+                    completion(.success(response.plants))
+                case .failure(let error):
+                    print(error)
+            }
+                
+        }
+    }
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            if (plantsArray.isEmpty) {
+                EmptyView()
+            } else {
+                PlantList(plants: plantsArray)
+            }
+        }
+        .onAppear {
+            let _: () = requestPlants{
+                result in
+                switch result {
+                case .success(let plants):
+                    print(plants)
+                    self.plantsArray = plants
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
 }
 

@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Alamofire
+
 
 struct PlantList: View {
+    
     var plants: [Plant];
     
     var body: some View {
@@ -22,8 +25,13 @@ struct PlantList: View {
 
 struct PlantList_Previews: PreviewProvider {
     static var previews: some View {
-        PlantList(plants: [Plant(id: 1, name: "monstera", image: "leaf"),
-                           Plant(id: 2, name: "fiddle leaf fig", image: "leaf"),
-                           Plant(id: 3, name: "majesty palm", image: "leaf")])
+        Group {
+            PlantList(plants: [Plant(id: 1, name: "monstera", imageURL: "leaf"),
+                               Plant(id: 2, name: "fiddle leaf fig", imageURL: "leaf"),
+                           Plant(id: 3, name: "majesty palm", imageURL: "leaf")])
+            PlantList(plants: [Plant(id: 1, name: "monstera", imageURL: "leaf"),
+                               Plant(id: 2, name: "fiddle leaf fig", imageURL: "leaf"),
+                               Plant(id: 3, name: "majesty palm", imageURL: "leaf")])
+        }
     }
 }

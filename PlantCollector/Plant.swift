@@ -8,7 +8,16 @@
 import Foundation
 
 struct Plant: Identifiable {
-    var id: Int
-    var name: String
-    var image: String
+    let id: Int
+    let name: String
+    let imageURL: String
+}
+
+
+extension Plant: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "common_name"
+        case imageURL = "image_url"
+    }
 }
