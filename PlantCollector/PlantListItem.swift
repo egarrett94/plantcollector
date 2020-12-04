@@ -13,15 +13,28 @@ struct PlantListItem: View {
     var body: some View {
         HStack {
             RemoteImage(url: plant.imageURL)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text(plant.name)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(Circle())
+                .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .overlay(Circle().stroke(Color.white, lineWidth: 2))
+            
+            Text(plant.name).font(.system(size: 20))
         }
     }
 }
 
 struct PlantListItem_Previews: PreviewProvider {
     static var previews: some View {
-        PlantListItem(plant: Plant(id: 1, name: "Monstera", imageURL: "leaf"))
+        let remoteUrl = "https://bs.floristic.org/image/o/1a03948baf0300da25558c2448f086d39b41ca30"
+        
+        PlantListItem(plant: Plant(id: 1,
+                                   name: "Evergreen oak",
+                                   imageURL: remoteUrl,
+                                   scientificName: "Quercus rotundifolia",
+                                   genus: "Quercus",
+                                   family: "Beech family",
+                                   scientificFamily: "Fagaceae",
+                                   yearDiscovered: 1785)
+        )
     }
 }

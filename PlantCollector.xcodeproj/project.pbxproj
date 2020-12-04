@@ -15,6 +15,10 @@
 		BCBEE0C62578660B007684D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBEE0C52578660B007684D2 /* Preview Assets.xcassets */; };
 		BCBEE0D0257868A2007684D2 /* PlantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEE0CF257868A2007684D2 /* PlantList.swift */; };
 		BCDB437B2579830500F8185C /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB437A2579830500F8185C /* RemoteImage.swift */; };
+		BCDB437E2579AD2600F8185C /* PlantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB437D2579AD2600F8185C /* PlantDetail.swift */; };
+		BCDB43812579AE5500F8185C /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB43802579AE5500F8185C /* ColorManager.swift */; };
+		BCDB43842579AE9500F8185C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDB43832579AE9500F8185C /* Colors.xcassets */; };
+		BCDB4387257AB5FF00F8185C /* PlantStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB4386257AB5FF00F8185C /* PlantStatistic.swift */; };
 		D6639724979BBA32FDE68203 /* libPods-PlantCollector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5922F16E10B78FCD2F4B3B /* libPods-PlantCollector.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +34,10 @@
 		BCBEE0C72578660B007684D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCBEE0CF257868A2007684D2 /* PlantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantList.swift; sourceTree = "<group>"; };
 		BCDB437A2579830500F8185C /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		BCDB437D2579AD2600F8185C /* PlantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetail.swift; sourceTree = "<group>"; };
+		BCDB43802579AE5500F8185C /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		BCDB43832579AE9500F8185C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BCDB4386257AB5FF00F8185C /* PlantStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStatistic.swift; sourceTree = "<group>"; };
 		CBD07A0D19CD362E3258AC9D /* Pods-PlantCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantCollector.release.xcconfig"; path = "Target Support Files/Pods-PlantCollector/Pods-PlantCollector.release.xcconfig"; sourceTree = "<group>"; };
 		F1BE8BDF506268A790239DD3 /* Pods-PlantCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantCollector.debug.xcconfig"; path = "Target Support Files/Pods-PlantCollector/Pods-PlantCollector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +93,10 @@
 				BC3D78A025786E74002AA632 /* PlantListItem.swift */,
 				BC3D78A325786F19002AA632 /* Plant.swift */,
 				BCDB437A2579830500F8185C /* RemoteImage.swift */,
+				BCDB437D2579AD2600F8185C /* PlantDetail.swift */,
+				BCDB43802579AE5500F8185C /* ColorManager.swift */,
+				BCDB43832579AE9500F8185C /* Colors.xcassets */,
+				BCDB4386257AB5FF00F8185C /* PlantStatistic.swift */,
 			);
 			path = PlantCollector;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDB43842579AE9500F8185C /* Colors.xcassets in Resources */,
 				BCBEE0C62578660B007684D2 /* Preview Assets.xcassets in Resources */,
 				BCBEE0C32578660B007684D2 /* Assets.xcassets in Resources */,
 			);
@@ -200,12 +213,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDB4387257AB5FF00F8185C /* PlantStatistic.swift in Sources */,
 				BC3D78A125786E74002AA632 /* PlantListItem.swift in Sources */,
 				BCBEE0C12578660A007684D2 /* ContentView.swift in Sources */,
 				BC3D78A425786F19002AA632 /* Plant.swift in Sources */,
 				BCDB437B2579830500F8185C /* RemoteImage.swift in Sources */,
 				BCBEE0D0257868A2007684D2 /* PlantList.swift in Sources */,
+				BCDB437E2579AD2600F8185C /* PlantDetail.swift in Sources */,
 				BCBEE0BF2578660A007684D2 /* PlantCollectorApp.swift in Sources */,
+				BCDB43812579AE5500F8185C /* ColorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

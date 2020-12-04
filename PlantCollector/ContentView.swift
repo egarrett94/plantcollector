@@ -25,12 +25,11 @@ struct ContentView: View {
         AF.request("https://trefle.io/api/v1/plants?token=\(API_KEY ?? "")&limit=10").responseDecodable {
             (response: AFDataResponse<PlantListResponse>) in
             switch response.result {
-                case .success(let response):
-                    completion(.success(response.plants))
-                case .failure(let error):
-                    print(error)
+            case .success(let response):
+                completion(.success(response.plants))
+            case .failure(let error):
+                print(error)
             }
-                
         }
     }
 
@@ -41,7 +40,7 @@ struct ContentView: View {
             } else {
                 PlantList(plants: plantsArray)
             }
-        }
+        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity).background(ColorManager.background).ignoresSafeArea(.all)
         .onAppear {
             let _: () = requestPlants{
                 result in
