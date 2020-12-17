@@ -32,6 +32,13 @@ struct ContentView: View {
             }
         }
     }
+    
+    func requestMyApi(completion: @escaping ((AFResult<Any>) -> Void)) {
+        AF.request("https://plant-collector-api.herokuapp.com/test").response {
+            response in
+                debugPrint(response)
+        }
+    }
 
     var body: some View {
         VStack {
@@ -51,6 +58,11 @@ struct ContentView: View {
                 case .failure(let error):
                     print(error)
                 }
+            }
+            
+            let _: () = requestMyApi{
+                result in
+                print(result)
             }
         }
     }

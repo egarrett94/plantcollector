@@ -11,20 +11,22 @@ struct PlantDetail: View {
     let plant: Plant;
     
     var body: some View {
-        VStack {
-            RemoteImage(url: plant.imageURL)
-                .aspectRatio(contentMode: .fill).clipShape(Circle())
-                .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).background(Circle().foregroundColor(.white))
-                .overlay(Circle().stroke(Color.white, lineWidth: 4)).shadow(radius: 15).padding(.bottom, 15)
-            
-            Text(plant.name).font(.system(size: 36)).bold().foregroundColor(ColorManager.primaryFont)
-            Text(plant.family).font(.system(size: 28)).padding(.bottom).foregroundColor(ColorManager.secondaryFont)
-            
-            PlantStatistic(statName: "Scientific Name", statValue: plant.scientificName)
-            PlantStatistic(statName: "Scientific Family", statValue: plant.scientificFamily)
-            PlantStatistic(statName: "Genus", statValue: plant.genus)
-            PlantStatistic(statName: "Discovered", statValue: String(plant.yearDiscovered))
-            Spacer()
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
+                RemoteImage(url: plant.imageURL)
+                    .aspectRatio(contentMode: .fill).clipShape(Circle())
+                    .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).background(Circle().foregroundColor(.white))
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4)).shadow(radius: 15).padding(.bottom, 15)
+                
+                Text(plant.name).font(.system(size: 36)).bold().foregroundColor(ColorManager.primaryFont)
+                Text(plant.family).font(.system(size: 28)).padding(.bottom).foregroundColor(ColorManager.secondaryFont)
+                
+                PlantStatistic(statName: "Scientific Name", statValue: plant.scientificName)
+                PlantStatistic(statName: "Scientific Family", statValue: plant.scientificFamily)
+                PlantStatistic(statName: "Genus", statValue: plant.genus)
+                PlantStatistic(statName: "Discovered", statValue: String(plant.yearDiscovered))
+                Spacer()
+            }
         }
     }
 }

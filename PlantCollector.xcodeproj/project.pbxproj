@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		BC3D78A125786E74002AA632 /* PlantListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D78A025786E74002AA632 /* PlantListItem.swift */; };
 		BC3D78A425786F19002AA632 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D78A325786F19002AA632 /* Plant.swift */; };
+		BC720C5125818168001432DA /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC720C5025818168001432DA /* AsyncContentView.swift */; };
+		BC720C54258181F1001432DA /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC720C53258181F1001432DA /* Error.swift */; };
+		BC720C582581A197001432DA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC720C572581A197001432DA /* NetworkManager.swift */; };
+		BC720C5C2582D818001432DA /* SignupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC720C5B2582D818001432DA /* SignupForm.swift */; };
+		BC720C612582EAD5001432DA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC720C602582EAD5001432DA /* MapKit.framework */; };
+		BC720C632582EB0A001432DA /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC720C622582EB0A001432DA /* HomeKit.framework */; };
 		BCBEE0BF2578660A007684D2 /* PlantCollectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEE0BE2578660A007684D2 /* PlantCollectorApp.swift */; };
 		BCBEE0C12578660A007684D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEE0C02578660A007684D2 /* ContentView.swift */; };
 		BCBEE0C32578660B007684D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBEE0C22578660B007684D2 /* Assets.xcassets */; };
@@ -26,6 +32,13 @@
 		BA5922F16E10B78FCD2F4B3B /* libPods-PlantCollector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlantCollector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3D78A025786E74002AA632 /* PlantListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListItem.swift; sourceTree = "<group>"; };
 		BC3D78A325786F19002AA632 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		BC720C5025818168001432DA /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
+		BC720C53258181F1001432DA /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		BC720C572581A197001432DA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BC720C5B2582D818001432DA /* SignupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupForm.swift; sourceTree = "<group>"; };
+		BC720C5E2582E57B001432DA /* PlantCollector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlantCollector.entitlements; sourceTree = "<group>"; };
+		BC720C602582EAD5001432DA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BC720C622582EB0A001432DA /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		BCBEE0BB2578660A007684D2 /* PlantCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBEE0BE2578660A007684D2 /* PlantCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectorApp.swift; sourceTree = "<group>"; };
 		BCBEE0C02578660A007684D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC720C632582EB0A001432DA /* HomeKit.framework in Frameworks */,
+				BC720C612582EAD5001432DA /* MapKit.framework in Frameworks */,
 				D6639724979BBA32FDE68203 /* libPods-PlantCollector.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,19 +99,24 @@
 		BCBEE0BD2578660A007684D2 /* PlantCollector */ = {
 			isa = PBXGroup;
 			children = (
+				BC720C5E2582E57B001432DA /* PlantCollector.entitlements */,
+				BCBEE0C42578660B007684D2 /* Preview Content */,
 				BCBEE0BE2578660A007684D2 /* PlantCollectorApp.swift */,
 				BCBEE0C02578660A007684D2 /* ContentView.swift */,
-				BCBEE0C22578660B007684D2 /* Assets.xcassets */,
 				BCBEE0C72578660B007684D2 /* Info.plist */,
-				BCBEE0C42578660B007684D2 /* Preview Content */,
+				BCBEE0C22578660B007684D2 /* Assets.xcassets */,
+				BCDB43832579AE9500F8185C /* Colors.xcassets */,
+				BCDB43802579AE5500F8185C /* ColorManager.swift */,
+				BCDB437A2579830500F8185C /* RemoteImage.swift */,
+				BC3D78A325786F19002AA632 /* Plant.swift */,
 				BCBEE0CF257868A2007684D2 /* PlantList.swift */,
 				BC3D78A025786E74002AA632 /* PlantListItem.swift */,
-				BC3D78A325786F19002AA632 /* Plant.swift */,
-				BCDB437A2579830500F8185C /* RemoteImage.swift */,
 				BCDB437D2579AD2600F8185C /* PlantDetail.swift */,
-				BCDB43802579AE5500F8185C /* ColorManager.swift */,
-				BCDB43832579AE9500F8185C /* Colors.xcassets */,
 				BCDB4386257AB5FF00F8185C /* PlantStatistic.swift */,
+				BC720C5025818168001432DA /* AsyncContentView.swift */,
+				BC720C53258181F1001432DA /* Error.swift */,
+				BC720C572581A197001432DA /* NetworkManager.swift */,
+				BC720C5B2582D818001432DA /* SignupForm.swift */,
 			);
 			path = PlantCollector;
 			sourceTree = "<group>";
@@ -112,6 +132,8 @@
 		D223AEA762A3902C7CEB431C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC720C622582EB0A001432DA /* HomeKit.framework */,
+				BC720C602582EAD5001432DA /* MapKit.framework */,
 				BA5922F16E10B78FCD2F4B3B /* libPods-PlantCollector.a */,
 			);
 			name = Frameworks;
@@ -217,11 +239,15 @@
 				BC3D78A125786E74002AA632 /* PlantListItem.swift in Sources */,
 				BCBEE0C12578660A007684D2 /* ContentView.swift in Sources */,
 				BC3D78A425786F19002AA632 /* Plant.swift in Sources */,
+				BC720C582581A197001432DA /* NetworkManager.swift in Sources */,
 				BCDB437B2579830500F8185C /* RemoteImage.swift in Sources */,
 				BCBEE0D0257868A2007684D2 /* PlantList.swift in Sources */,
 				BCDB437E2579AD2600F8185C /* PlantDetail.swift in Sources */,
+				BC720C5C2582D818001432DA /* SignupForm.swift in Sources */,
 				BCBEE0BF2578660A007684D2 /* PlantCollectorApp.swift in Sources */,
 				BCDB43812579AE5500F8185C /* ColorManager.swift in Sources */,
+				BC720C5125818168001432DA /* AsyncContentView.swift in Sources */,
+				BC720C54258181F1001432DA /* Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlantCollector/PlantCollector.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantCollector/Preview Content\"";
 				DEVELOPMENT_TEAM = 378FXZ77Z6;
@@ -373,6 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlantCollector/PlantCollector.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantCollector/Preview Content\"";
 				DEVELOPMENT_TEAM = 378FXZ77Z6;

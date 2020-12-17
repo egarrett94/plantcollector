@@ -23,7 +23,7 @@ struct PlantStatistic: View {
             Text(statValue).font(.system(size: 15)).fontWeight(.light).padding(.trailing, 15).multilineTextAlignment(.leading)
                 .lineLimit(3).foregroundColor(ColorManager.secondaryFont)
             Spacer()
-        }.padding(.all, 5)
+        }.padding(.all, 5).frame(height: 60)
     }
 }
 
