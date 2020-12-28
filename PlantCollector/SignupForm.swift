@@ -6,14 +6,27 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct SignupForm: View {
     @State var username: String = ""
     
     @State private var password = ""
     @State private var confirmedPassword = ""
+    
+    func requestSignUp(parameters: [String: String], completion: @escaping ((AFResult<Any>) -> Void)) {
+        AF.request("https://plant-collector-api.herokuapp.com/auth/signup", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+                .responseString { response in
+                    switch response.result {
+                            case .success:
+                            print(response)
+                            break
 
-    @State private var keyboardOffset: CGFloat = 0
+                            case .failure(let error):
+                             print(error)
+                    }
+               }
+    }
     
     var body: some View {
         VStack {
@@ -30,40 +43,21 @@ struct SignupForm: View {
                     
                     Section {
                         Button(action: {
-                            // put network call to http:// the api /login
-                            print("Submitted \($username) \($password)")
+                            let parameters: [String: String] = [
+                                "username" : self.username,
+                                "password" : self.confirmedPassword
+                            ]
+                            requestSignUp(parameters: parameters){
+                                result in
+                                print(result)
+                            }
                         }) {
                             Text("Submit")
                         }.disabled(self.isFormValid())
                     }
                 }.navigationTitle(Text("Sign up"))
-            }.offset(y: -self.keyboardOffset)
-        }.background(Color(UIColor.systemGray6))
-
-        .onAppear {
-            NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) {
-                notification in
-                    NotificationCenter.default.addObserver(
-                        forName: UIResponder.keyboardDidShowNotification,
-                        object: nil,
-                        queue: .main) {
-                        
-                        notification in
-                            guard let userInfo = notification.userInfo,
-                                let keyboardRect = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
-                            
-                            self.keyboardOffset = keyboardRect.height
-                    }
-                    
-                    NotificationCenter.default.addObserver(
-                        forName: UIResponder.keyboardDidHideNotification,
-                        object: nil,
-                        queue: .main) { (notification) in
-                            self.keyboardOffset = 0
-                    }
             }
-        }
-        
+        }.background(Color(UIColor.systemGray6))
     }
     
     private func isFormValid() -> Bool {
@@ -74,7 +68,6 @@ struct SignupForm: View {
         if password.count < 8 || self.isPasswordValid() == false {
             return true
         }
-        
         return false
     }
     
@@ -82,7 +75,6 @@ struct SignupForm: View {
         if !confirmedPassword.isEmpty && password == confirmedPassword {
             return true
         }
-        
         return false
     }
 }
