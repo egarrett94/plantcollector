@@ -8,16 +8,15 @@
 import SwiftUI
 import Alamofire
 
-struct SignupForm: View {
+struct LoginForm: View {
     @State var username: String = ""
     
     @State private var password = ""
-    @State private var confirmedPassword = ""
     
-    @State var resetForm: () -> Void
+    var resetForm: () -> Void
     
-    func requestSignUp(parameters: [String: String], completion: @escaping ((AFResult<Any>) -> Void)) {
-        AF.request("https://plant-collector-api.herokuapp.com/auth/signup", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+    func requestLogIn(parameters: [String: String], completion: @escaping ((AFResult<Any>) -> Void)) {
+        AF.request("https://plant-collector-api.herokuapp.com/auth/login", method: .post, parameters: parameters, encoding: JSONEncoding.default)
                 .responseString { response in
                     switch response.result {
                             case .success:
@@ -49,28 +48,25 @@ struct SignupForm: View {
                 }.accessibility(label: Text("Go back"))
                 Spacer()
             }
-
+            
             NavigationView {
                 Form {
                     Section(header: Text("Your Details")) {
                         TextField("Username", text: $username).autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/).disableAutocorrection(true)
-                    }
-                    
-                    Section {
                         SecureField("Enter password", text: $password)
-                        SecureField("Confirm Password", text: $confirmedPassword)
                     }
                     
                     Section {
                         Button(action: {
                             let parameters: [String: String] = [
                                 "username" : self.username,
-                                "password" : self.confirmedPassword
+                                "password" : self.password
                             ]
-                            requestSignUp(parameters: parameters) {
+                            requestLogIn(parameters: parameters) {
                                 (response: AFResult<Any>) in
                                 switch response {
                                         case .success:
+                                        print("succESSSSSSSSSSSSSSSSSSS")
                                         print(response)
                                         break
 
@@ -82,7 +78,7 @@ struct SignupForm: View {
                             Text("Submit")
                         }.disabled(self.isFormValid())
                     }
-                }.navigationTitle(Text("Sign up"))
+                }.navigationTitle(Text("Log in"))
             }
         }.background(Color(UIColor.systemGray6)).ignoresSafeArea()
     }
@@ -92,26 +88,15 @@ struct SignupForm: View {
             return true
         }
         
-        if password.count < 8 || self.isPasswordValid() == false {
-            return true
-        }
-        return false
-    }
-    
-    private func isPasswordValid() -> Bool {
-        if !confirmedPassword.isEmpty && password == confirmedPassword {
+        if password.count < 8 {
             return true
         }
         return false
     }
 }
 
-func anon() {
-    print("anon")
-}
-
-struct SignupForm_Previews: PreviewProvider {
+struct LoginForm_Previews: PreviewProvider {
     static var previews: some View {
-        SignupForm(resetForm: anon)
+        LoginForm(resetForm: anon)
     }
 }

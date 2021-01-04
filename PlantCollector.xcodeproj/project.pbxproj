@@ -15,6 +15,9 @@
 		BC720C5C2582D818001432DA /* SignupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC720C5B2582D818001432DA /* SignupForm.swift */; };
 		BC720C612582EAD5001432DA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC720C602582EAD5001432DA /* MapKit.framework */; };
 		BC720C632582EB0A001432DA /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC720C622582EB0A001432DA /* HomeKit.framework */; };
+		BC74CEEC259BB696008DAE09 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74CEEB259BB696008DAE09 /* SplashScreen.swift */; };
+		BC74CEEF259BB6C5008DAE09 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74CEEE259BB6C5008DAE09 /* Welcome.swift */; };
+		BC74CEF2259BBF7C008DAE09 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74CEF1259BBF7C008DAE09 /* LoginForm.swift */; };
 		BCBEE0BF2578660A007684D2 /* PlantCollectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEE0BE2578660A007684D2 /* PlantCollectorApp.swift */; };
 		BCBEE0C12578660A007684D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEE0C02578660A007684D2 /* ContentView.swift */; };
 		BCBEE0C32578660B007684D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBEE0C22578660B007684D2 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 		BC720C5E2582E57B001432DA /* PlantCollector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlantCollector.entitlements; sourceTree = "<group>"; };
 		BC720C602582EAD5001432DA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BC720C622582EB0A001432DA /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		BC74CEEB259BB696008DAE09 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		BC74CEEE259BB6C5008DAE09 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		BC74CEF1259BBF7C008DAE09 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		BCBEE0BB2578660A007684D2 /* PlantCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBEE0BE2578660A007684D2 /* PlantCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectorApp.swift; sourceTree = "<group>"; };
 		BCBEE0C02578660A007684D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 				BC720C53258181F1001432DA /* Error.swift */,
 				BC720C572581A197001432DA /* NetworkManager.swift */,
 				BC720C5B2582D818001432DA /* SignupForm.swift */,
+				BC74CEEB259BB696008DAE09 /* SplashScreen.swift */,
+				BC74CEEE259BB6C5008DAE09 /* Welcome.swift */,
+				BC74CEF1259BBF7C008DAE09 /* LoginForm.swift */,
 			);
 			path = PlantCollector;
 			sourceTree = "<group>";
@@ -236,10 +245,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCDB4387257AB5FF00F8185C /* PlantStatistic.swift in Sources */,
+				BC74CEEF259BB6C5008DAE09 /* Welcome.swift in Sources */,
 				BC3D78A125786E74002AA632 /* PlantListItem.swift in Sources */,
+				BC74CEEC259BB696008DAE09 /* SplashScreen.swift in Sources */,
 				BCBEE0C12578660A007684D2 /* ContentView.swift in Sources */,
 				BC3D78A425786F19002AA632 /* Plant.swift in Sources */,
 				BC720C582581A197001432DA /* NetworkManager.swift in Sources */,
+				BC74CEF2259BBF7C008DAE09 /* LoginForm.swift in Sources */,
 				BCDB437B2579830500F8185C /* RemoteImage.swift in Sources */,
 				BCBEE0D0257868A2007684D2 /* PlantList.swift in Sources */,
 				BCDB437E2579AD2600F8185C /* PlantDetail.swift in Sources */,

@@ -11,7 +11,7 @@ import SwiftUI
 struct PlantCollectorApp: App {
     var body: some Scene {
         WindowGroup {
-            SignupForm().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity).background(ColorManager.background).ignoresSafeArea(.all)
+            SplashScreen()
         }
     }
 }
